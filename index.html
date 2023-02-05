@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Shu-Chuan Hsu">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- bootstrap 4.1.3-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <!--custom css -->
+        <link rel="stylesheet" href="style.css">
+
+
+        <title>Snake Game</title>
+    </head>
+    <body>
+        <section id="header">
+            <h2>Welcome to Snake Game</h2>
+            <h5>A new-defined, cursor-based snake game by Shu-Chuan, Hsu</h5>
+
+            <div class="quick-skip">
+                <a class="btn" href="#rules">Rules</a>
+                <a class="btn btn-primary" href="#canvas">Game</a>
+            </div>
+
+        </section>
+
+        <section id="rules">
+            <h2>Get to know some rules</h2>
+            <h5>Better not to make mistakes</h5>
+
+            <div class="container">
+                <div class="left-container">
+                    <h6>#1 Use your cursor to control the direction. The direction relative to the head of snake is your direction.</h6>
+                    <h6>#2 If your cursor is in the canvas, your game is started. If your mouse is off the canvas, you can't do any operation.</h6>
+                    <h6>#3 Can't move toward the upsite direction. Your snake is initially set as upward.</h6>
+                    <h6>#4 If you eat apple, you win a point and also make yourself one unit longer.</h6>
+                    <h6>#5 If you hit the wall, or your self, your game is over.</h6>
+                    <h6>#6 &ltSpecial&gt Level will increase when you get more points. Your speed may be accerated as your level is higher.</h6>
+                </div>
+    
+                <div class="right-container">
+    
+                </div>
+            </div>
+        </section>
+
+        <section id="game">
+            <h2>Let's do this</h2>
+            <h5>Try to score high huh</h5>
+
+            <div class="scoreDiv">
+                <span class="scoreSpan rounded-circle">
+                    <h3 id="score" class="score">0</h3>
+                </span>
+                <span class="scoreSpan rounded-circle">
+                    <h3 id="level" class="score">1</h3>
+                </span>
+            </div>
+
+            <div class="scoreDiv">
+                <span class="attr ">
+                    <h5 class="attrCenter">score</h5>
+                </span>
+                <span class="attr ">
+                    <h5 class="attrCenter">level</h5>
+                </span>
+            </div>
+
+            <div class="">
+                <canvas id="canvas" style="border: 1px solid" width="1400" height="500"></canvas>
+                <div id="gameover" class="alert alertCenter hidden" role="alert">Game Over!</div>
+                <div id="statistics" class="alert staCenter hidden">
+                    <p id="currScore">aa</p>
+                    <p id="currLevel">a</p>
+                    <p id="avgTime">a</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="records">
+            <h2>Where are you</h2>
+            <h5>Let's be on the ranking board</h5>
+
+            <div class="recordsCenter">
+                <table class="table table-hover ">
+                    <tr>
+                        <td class="col-sm-6"><h4>Best Score: </h4></td>
+                        <td><h4 id="bestScore"></h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-6"><h4>Best Level: </h4></td>
+                        <td><h4 id="bestLevel"></h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-6"><h4>Best Avg Time to Eat An Apple: </h4></td>
+                        <td><h4 id="bestTime"></h4></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+
+        <section id="footer">
+            <footer class="footer">
+                <h5>© 2022 Shu Chuan Hsu. All Rights Reserved.</h5>
+            </footer>
+        </section>
+
+        <!-- custom js -->
+        <script src="index.js"></script>
+    </body>
+</html>
